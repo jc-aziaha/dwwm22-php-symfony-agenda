@@ -9,5 +9,16 @@
 {% block main %}
     <h1 class="text-center display-5 my-3">Nouveau contact</h1>
 
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mx-auto p-4 rounded shadow">
+                {{form_start(form)}}
+                    <div>
+                        <label for="">Prénom</label>
+                        {{form_widget(form.firstName)}}
+                    </div>
+                {{form_end(form)}}
+            </div>
+        </div>
+    </div>
 {% endblock %}
