@@ -31,10 +31,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="contact_form_comment">Commentaire</label>
-                        {{form_widget(form.comment, {'attr': {'class': 'form-control'}})}}
+                        {{form_widget(form.comment, {'attr': {'class': 'form-control', 'rows': 4}})}}
                     </div>
                     <div>
-                        <input type="submit" class="btn btn-primary w-100 shadow">
+                        <input formnovalidate type="submit" class="btn btn-primary w-100 shadow" value="Créer">
                     </div>
                 {{form_end(form)}}
             </div>
