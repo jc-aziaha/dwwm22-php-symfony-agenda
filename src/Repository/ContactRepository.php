@@ -8,6 +8,8 @@ use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @extends ServiceEntityRepository<Contact>
+ * 
+ * findAll(), find($id), findBy([]), findOneBy([]), count()
  */
 class ContactRepository extends ServiceEntityRepository
 {
