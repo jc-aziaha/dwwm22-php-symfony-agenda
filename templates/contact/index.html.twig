@@ -43,7 +43,7 @@
                             <td>{{contact.phone}}</td>
                             <td>{{contact.comment}}</td>
                             <td>
-                                <a href="" class="btn btn-sm btn-secondary">Modifier</a>
+                                <a href="{{path('app_contact_edit', {'id':contact.id})}}" class="btn btn-sm btn-secondary">Modifier</a>
                                 <a href="" class="btn btn-sm btn-danger">Supprimer</a>
                             </td>
                         </tr>
