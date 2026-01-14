@@ -42,9 +42,12 @@
                             <td>{{contact.email}}</td>
                             <td>{{contact.phone}}</td>
                             <td>{{contact.comment}}</td>
-                            <td>
+                            <td class="d-flex justify-content-center align-items-center gap-2">
                                 <a href="{{path('app_contact_edit', {'id':contact.id})}}" class="btn btn-sm btn-secondary">Modifier</a>
-                                <a href="" class="btn btn-sm btn-danger">Supprimer</a>
+                                <form action="{{path('app_contact_delete', {'id':contact.id})}}" method="POST">
+                                    <input type="hidden" name="csrf_token" value="{{csrf_token('contact_'~contact.id)}}">
+                                    <input type="submit" class="btn btn-sm btn-danger" value="Supprimer" onclick="return confirm('Confirmer la suppression?')">
+                                </form>
                             </td>
                         </tr>
                     {% endfor %}
@@ -52,7 +55,7 @@
             </table>
         </div>
     {% else %}
-        <p class="mt-5">Aucun contact dans la liste.</p>
+        <p class="mt-5 text-center">Aucun contact dans la liste.</p>
     {% endif %}
     
 

@@ -93,4 +93,17 @@ final class ContactController extends AbstractController
         ]);
     }
 
+
+    #[Route('/contact/delete/{id}', name: 'app_contact_delete', methods: ['POST'])]
+    public function delete(Contact $contact, Request $request, EntityManagerInterface $entityManager): Response {
+
+        if ( $this->isCsrfTokenValid("contact_{$contact->getId()}", $request->request->get('csrf_token')) ) {
+            $entityManager->remove($contact);
+            $entityManager->flush();
+
+            $this->addFlash('success', "Le contact a été supprimé");
+        }
+
+        return $this->redirectToRoute('app_contact_index');
+    }
 }
